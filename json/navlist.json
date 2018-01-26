@@ -1,0 +1,120 @@
+[{
+	"title": "音频",
+	"link": "audio",
+	"type": 0
+},{
+	"title": "视频",
+	"link": "video",
+	"type": 0
+},{
+	"title": "翻译",
+	"link": "translation",
+	"type": 0
+},{
+	"title": "科技报道",
+	"link": "ms001",
+	"type": 1
+},{
+	"title": "词汇掌故",
+	"link": "ms002",
+	"type": 1
+},{
+	"title": "美国故事",
+	"link": "ms003",
+	"type": 1
+},{
+	"title": "时事新闻",
+	"link": "ms004",
+	"type": 1
+},{
+	"title": "经济报道",
+	"link": "ms005",
+	"type": 1
+},{
+	"title": "建国史话",
+	"link": "ms006",
+	"type": 1
+},{
+	"title": "健康报道",
+	"link": "ms007",
+	"type": 1
+},{
+	"title": "美国万花筒",
+	"link": "ms008",
+	"type": 1
+},{
+	"title": "科学动态",
+	"link": "ms009",
+	"type": 1
+},{
+	"title": "农业报道",
+	"link": "ms0010",
+	"type": 1
+},{
+	"title": "美国专栏",
+	"link": "ms0011",
+	"type": 1
+},{
+	"title": "美国人物",
+	"link": "ms0012",
+	"type": 1
+},{
+	"title": "流行美语",
+	"link": "jx001",
+	"type": 2
+},{
+	"title": "美语三级跳",
+	"link": "jx002",
+	"type": 2
+},{
+	"title": "美国习惯用语",
+	"link": "jx003",
+	"type": 2
+},{
+	"title": "学个词",
+	"link": "jx004",
+	"type": 2
+},{
+	"title": "AS IT IS",
+	"link": "jx005",
+	"type": 2
+},{
+	"title": "体育美语",
+	"link": "jx006",
+	"type": 2
+},{
+	"title": "商务礼节美语",
+	"link": "jx007",
+	"type": 2
+},{
+	"title": "双语新闻",
+	"link": "jx008",
+	"type": 2
+},{
+	"title": "美语咖啡屋",
+	"link": "jx009",
+	"type": 2
+},{
+	"title": "中级美语",
+	"link": "jx0010",
+	"type": 2
+},{
+	"title": "美语训练班",
+	"link": "jx0011",
+	"type": 2
+},{
+	"title": "VOA每日一课",
+	"link": "jx0012",
+	"type": 2
+},{
+	"title": "OMG美语",
+	"link": "jx0013",
+	"type": 2
+},{
+	"title": "VOA相关资料",
+	"link": "jx0014",
+	"type": 2
+}]
+
+
+
