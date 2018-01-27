@@ -1,14 +1,13 @@
 const IndexModel = require('../model/index')
-const list = require('../json/detailcon.json')
+const list = require('../json/detailright.json')
 
 const saveHeaderData = (req, res) => {
 	list.map((value, index) => {
-		IndexModel.saveHeaderData ( value.from, value.count, value.audio, value.type,value.con, value.time, value.link, (result) => {
+		IndexModel.saveHeaderData ( value.type, value.rightimg, value.video, value.posimg, (result) => {
 			console.log('存成功')
 		})	
 	})
 }
-
 
 const getHeaderData = (req, res) => {
 	IndexModel.findHeaderData((navlist, detailtitle, detaillist) => {

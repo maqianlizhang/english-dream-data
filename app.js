@@ -8,6 +8,9 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var api = require('./routes/api');
 var app = express();
+var cookieSession = require('cookie-session')
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -20,6 +23,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cookieSession({
+  name: 'session',
+  keys: ['dream'],
+  maxAge: 24 * 60 * 60 * 1000
+}))
+
 
 app.use('/', index);
 app.use('/api', api);

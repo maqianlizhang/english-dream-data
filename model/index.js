@@ -52,15 +52,18 @@ var DetailCon = db.model('detailcon', {
 	link: String
 })
 
-const saveHeaderData = ( from , count, audio, type, con, time, link, callback) => {
-	const navList = new DetailCon({ 
-		from,
-		count,
-		audio,
+var DetailRight = db.model('detailright', {
+	type: Number,
+	rightimg: String,
+	video: String,
+	posimg: String
+})
+const saveHeaderData = ( type, rightimg, video, posimg, callback) => {
+	const navList = new DetailRight({ 
 		type,
-		con,
-		time,
-		link
+		rightimg,
+		video,
+		posimg
 	})
 	navList.save().then(() => {
 		callback();
@@ -99,7 +102,10 @@ const findListCon = (link, callback) => {
 	const listcons = {
 		'img': {},
 		'book': [],
-		'con': []
+		'con': [],
+		'posimg':'',
+		'rightimg': '',
+		'video': ''
 	}
 	NavList.find({link:link}, (err,res)=> {
 		ListImg.find({}, (err, result) => {
@@ -110,7 +116,12 @@ const findListCon = (link, callback) => {
 						listcons.book = result
 						ListCon.find({type: res[0].type}, (err, result) => {
 							listcons.con = result
-							callback(listcons)
+							DetailRight.find({type: res[0].type}, (err, resultright) => {
+								listcons.posimg = resultright[0].posimg
+								listcons.rightimg = resultright[0].rightimg
+								listcons.video = resultright[0].video
+								callback(listcons)
+							})
 						})
 					})
 				} 

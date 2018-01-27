@@ -29,6 +29,7 @@ const login = (username, password, callback) => {
 	})
 }
 
+
 module.exports= {
 	findUser,
 	addUser,

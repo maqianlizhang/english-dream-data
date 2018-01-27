@@ -11,5 +11,7 @@ router.get('/detaillist.json',IndexController.getIndexType );
 router.get('/detail.json', IndexController.getDetailCon);
 router.post('/register/addUser/',UserController.addUser );
 router.post('/login/',UserController.login );
+router.post('/isLogin/',UserController.isLogin );
+router.post('/checklogout/',UserController.logout );
 
 module.exports = router;

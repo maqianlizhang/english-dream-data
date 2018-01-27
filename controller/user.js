@@ -32,6 +32,7 @@ const login = (req, res) => {
 	hash.update(password);
 	UserModel.login(username, hash.digest('hex') , (userinfo) => {
 		if( userinfo ) {
+			req.session.username = username
 			res.json({
 				"ret": true,
 				"data": {
@@ -50,7 +51,41 @@ const login = (req, res) => {
 	})
 }
 
+
+const isLogin = (req, res) => {
+	if(req.session.username) {
+		res.json({
+			"ret": true,
+			"data": {
+				username: req.session.username,
+				isLogin: true
+			}
+		})
+	} else {
+		res.json({
+			"ret": true,
+			"isLogin": false
+		})
+	}
+}
+
+
+const logout = (req, res) => {
+  if(req.session.username) {
+  	req.session.username = ''
+  	res.json({
+  		"ret": true,
+  		"data": {
+  			logout: true,
+  			user: ''
+  		}
+  	})
+  }
+}
+
 module.exports = {
 	addUser,
-	login
+	login,
+	isLogin,
+  logout
 }

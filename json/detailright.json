@@ -1,0 +1,18 @@
+[{
+	"type": 0,
+	"rightimg": "http://www.easyvoa.com/templets/images/studioclassroom/lt_mag.png",
+	"video": "../video/english01.mp4",
+	"posimg": "http://www.easyvoa.com/templets/images/studioclassroom/lt_title.png"
+
+},{
+	"type": 1,
+	"rightimg": "http://www.easyvoa.com/templets/images/studioclassroom/sc_mag.png",
+	"video": "../video/english02.mp4",
+	"posimg": "http://www.easyvoa.com/templets/images/studioclassroom/sc_title.png"
+
+},{
+	"type": 2,
+	"rightimg": "http://www.easyvoa.com/templets/images/studioclassroom/ad_mag.png",
+	"video": "../video/english01.mp4",
+	"posimg": "http://www.easyvoa.com/templets/images/studioclassroom/ad_title.png"
+}]
