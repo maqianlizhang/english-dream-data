@@ -81,21 +81,47 @@ const findHeaderData = (callback) => {
 }
 
 const getIndexCon = (callback) => {
+	const detaillists = {
+		title: '',
+		list: []
+	}
 	DetailNav.find({}, (err, res) => {
-		callback(res)
+		detaillists.list = res
+		detaillists.title = 'VOA（美国之音）慢速英语,常速英语,官网最新内容在线收听。'
+		callback(detaillists)
 	})
 }
 
 const getIndexType = (link,callback) => {
-	const detaillist = []
+	const detaillist = {
+    title: '',
+    list: []
+  }
+  
 	DetailTitle.find({link:link}, (err, res) => {
 		DetailNav.find({type: res[0].type}, (err, result) => {
 			result.map((value) => {
-				detaillist.push(value)
+				detaillist.list.push(value)
 			})
+      detaillist.title = 'VOA>'+res[0].title
 			callback(detaillist)
 		})
 	})
+}
+
+const findIndexInfo = (type, link, callback) => {
+	const indexinfo = {
+    title: '',
+    list: []
+  } 
+  DetailTitle.find({type: type}, ( err, res) => {
+  	Nav.find({type: res[0].type, link: link}, (err, result) => {
+  		indexinfo.list = result
+  		indexinfo.title = 'VOA>'+res[0].title + '>' + result[0].title
+  		callback(indexinfo)
+  	})
+
+  })
 }
 
 const findListCon = (link, callback) => {
@@ -145,7 +171,8 @@ module.exports = {
 	findListCon,
 	getIndexType,
 	getIndexCon,
-	getDetailCon
+	getDetailCon,
+	findIndexInfo
 }
 
 

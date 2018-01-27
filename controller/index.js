@@ -40,6 +40,15 @@ const getIndexType = (req, res) => {
 	})
 }
 
+const getIndexInfoCon = (req, res) => {
+	const { type, link } = req.query
+	IndexModel.findIndexInfo(type, link, (result) => {
+		res.json({
+			"list": result
+		})
+	})
+}
+
 const getListData = (req, res) => {
 	const link = req.query.link
 	IndexModel.findListCon(link, (result) => {
@@ -48,6 +57,7 @@ const getListData = (req, res) => {
 		})
 	})
 }
+
 
 const getDetailCon = (req, res) => {
 	const link = req.query.id
@@ -67,5 +77,6 @@ module.exports = {
 	getIndexCon,
 	saveHeaderData,
 	getIndexType,
-	getDetailCon
+	getDetailCon,
+	getIndexInfoCon
 }
