@@ -165,6 +165,12 @@ const getDetailCon = (link, callback) => {
 	})
 }
 
+const deleteDetail = (id, callback) => {
+	DetailNav.findByIdAndRemove({_id: id}, (err, res) => {
+		callback(res)
+	})
+}
+
 module.exports = {
 	saveHeaderData,
 	findHeaderData,
@@ -172,7 +178,8 @@ module.exports = {
 	getIndexType,
 	getIndexCon,
 	getDetailCon,
-	findIndexInfo
+	findIndexInfo,
+	deleteDetail
 }
 
 

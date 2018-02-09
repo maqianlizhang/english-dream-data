@@ -70,7 +70,26 @@ const getDetailCon = (req, res) => {
  })
 }
 
-
+const deleteDetail = (req, res) => {
+  const id = req.query.id;
+  IndexModel.deleteDetail(id, (result) => {
+    if( result ) {
+      res.json({
+        "ret": true,
+        "data": {
+          delete: true
+        }
+      })
+    } else {
+      res.json({
+        "ret": true,
+        "data": {
+          delete: false
+        }
+      })
+    }
+  })
+}
 module.exports = {
 	getHeaderData,
 	getListData,
@@ -78,5 +97,6 @@ module.exports = {
 	saveHeaderData,
 	getIndexType,
 	getDetailCon,
-	getIndexInfoCon
+	getIndexInfoCon,
+	deleteDetail
 }

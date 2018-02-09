@@ -10,6 +10,8 @@ router.get('/index.json', IndexController.getIndexCon);
 router.get('/detaillist.json',IndexController.getIndexType);
 router.get('/detail.json', IndexController.getDetailCon);
 router.get('/indexinfo', IndexController.getIndexInfoCon);
+router.get('/deleteDetail/', IndexController.deleteDetail);
+
 router.post('/register/addUser/',UserController.addUser);
 router.post('/login/',UserController.login);
 router.post('/isLogin/',UserController.isLogin);
